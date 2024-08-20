@@ -23,49 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-const customSlides = document.querySelector('.custom-slides');
-const customSlideCount = document.querySelectorAll('.custom-slide').length;
-const customVisibleSlides = 3;
-let customCurrentIndex = 0;
-
-const customPrevArrow = document.getElementById('custom-prev');
-const customNextArrow = document.getElementById('custom-next');
-const customDots = document.querySelectorAll('.custom-dot');
-
-customPrevArrow.addEventListener('click', () => {
-    if (customCurrentIndex > 0) {
-        customCurrentIndex--;
-        customUpdateSlidePosition();
-    }
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 23,
+    centeredSlides: false,
+    loop: true
 });
-
-customNextArrow.addEventListener('click', () => {
-    if (customCurrentIndex < customSlideCount - customVisibleSlides) {
-        customCurrentIndex++;
-        customUpdateSlidePosition();
-    }
-});
-
-customDots.forEach(dot => {
-    dot.addEventListener('click', () => {
-        customCurrentIndex = parseInt(dot.getAttribute('data-index')) * customVisibleSlides;
-        customUpdateSlidePosition();
-    });
-});
-
-function customUpdateSlidePosition() {
-    const customOffset = -customCurrentIndex * 100; 
-    customSlides.style.transform = `translateX(${customOffset}px)`;
-    customUpdateControls();
-}
-
-function customUpdateControls() {
-    customDots.forEach(dot => dot.classList.remove('active'));
-    customDots[Math.floor(customCurrentIndex / customVisibleSlides)].classList.add('active');
-
-    customPrevArrow.classList.toggle('disabled', customCurrentIndex === 0);
-    customNextArrow.classList.toggle('disabled', customCurrentIndex === customSlideCount - customVisibleSlides);
-}
-
-customUpdateControls();

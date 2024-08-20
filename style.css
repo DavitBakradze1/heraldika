@@ -8,11 +8,16 @@
     src: url('fonts/firago-latin-700-normal.ttf');
 }
 
+
+
 * {
     box-sizing: border-box;
     margin: 0%;
     padding: 0%;
-    flex-wrap: wrap;
+}
+
+body{
+    background-color: #F5F5F5;
 }
 
 .p-name{
@@ -49,7 +54,7 @@ a{
 
 
 .container{
-    width: 80%;
+    width: 1090px;
     margin: 0 auto;
 }
 
@@ -58,6 +63,9 @@ header{
     height: 70px;
     display: flex;
     align-items: center;
+    position:fixed;
+    background-color: white;
+    z-index: 10;
 }
 
 .header-box{
@@ -129,6 +137,9 @@ header{
     height: 100%;
 }
 
+/*heaeder*/
+
+
 .slider-box{
     position: relative;
     width: 100%;
@@ -148,7 +159,7 @@ header{
     transition: opacity 0.5s ease-in-out;
 }
 
- img {
+img {
     width: 100%;
     height: 334px;
     display: block;
@@ -181,7 +192,7 @@ header{
 .section-nav{
     display: grid;
     grid-template-columns: 200px 200px 200px 200px;
-    height: 100px;
+    
     position: absolute;
     top: 330px;
     left: 50%;
@@ -189,7 +200,7 @@ header{
     border-radius: 20px;
 }
 
-
+/*section nav*/
 .section-nav-box{
     display: flex;
     align-items: center;
@@ -204,16 +215,20 @@ header{
 .first-child{
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    height: 100px;
+}
+
+.first-child:hover{
+    height: 110px;
 }
 
 .last-child{
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    height: 100px;
 }
 
-.section-nav-box:hover{
-    background-color: #F2F2F2;
-}
+/*section nav*/
 
 .section{
     padding-top: 50px;
@@ -269,89 +284,59 @@ header{
 }
 
 .news-box-shape:hover{
-    background-color: #F2F2F2;
+    background-color: #003399;
 }
 
-.custom-slider-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.custom-slider {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    flex-grow: 1;
-}
-
-.custom-slides {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-    justify-content: space-between;
-}
-
-.custom-slide {
-    width: 348px;
-    height: 259px;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    background-color: #007bff;
-    position: relative;
-    border-radius: 20px;
-}
-
-.custom-photo{
-    position: relative;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.custom-cover{
+/*swiper*/
+.preview-slide-cover {
     position: absolute;
+    z-index: 10;
     width: 100%;
-    height: auto;
-    bottom: 0%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    overflow: hidden; 
+    border-radius: 10px;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 0) 25%, 
+        rgba(0, 67, 200, 0) 50%,
+        rgba(50, 63, 91, 0.6) 65%, 
+        rgba(37, 88, 168, 0.8) 80%, 
+        rgba(0, 51, 151, 1) 100% 
+    );
 }
 
-.header-text{
-    position: absolute;
+.header-text-box{
     width: 241px;
     height: 65px;
-    bottom: 20px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.custom-arrow {
-    cursor: pointer;
-}
-
-.custom-arrow.disabled {
-    color: #ccc;
-    cursor: not-allowed;
-}
-
-.custom-dots {
-    display: flex;
-    align-items: center;
-    width: 143px; 
-    height: 26px;
-    justify-content: space-between;
-    left: 50%;
-    transform: translate(-50%, -50%);
     position: absolute;
-    margin-top: 20px;
-}   
-
-.custom-dot {
-  cursor: pointer;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
-.custom-dot.active {
-    color: #007bff;
+
+
+.preview-slide {
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
 }
+
+.preview-slide img {
+    border-radius: 10px;
+    width: 100%;
+    height: 259px;
+    object-fit: cover;
+    position: relative;
+}
+/*swiper*/
+
+
+
 
 .map-section{
     margin-top: 60px;
@@ -378,7 +363,7 @@ header{
 }
 
 .map-type-box:hover{
-    background-color: #ccc;
+    background-color: #003399;
 }
 
 .map-box{
@@ -420,6 +405,8 @@ header{
     flex-direction: column;
     width: 240px;
 }
+
+/*footer*/
 
 .footer{
     width: 100%;
@@ -556,3 +543,5 @@ header{
 
 
 }
+
+/* preview slider styles */
