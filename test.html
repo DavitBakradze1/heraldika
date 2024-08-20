@@ -1,95 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <title>Swiper demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Slider with Pagination and Touch Slide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+        
+        .slider {
+            position: relative;
+            width: 80%;
+            max-width: 1200px;
+            overflow: hidden;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
 
-  <!-- Demo styles -->
-  <style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
 
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
+        .slider-page {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+            width: 100%;
+            flex-shrink: 0;
+            padding: 20px;
+        }
 
-    .swiper {
-      width: 100%;
-      height: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
+        .grid-card {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      height: 340px;
+        .prev-btn, .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
 
-      /* Center slide text vertically */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  </style>
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        .pagination {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+
+        .pagination-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .pagination-dot.active {
+            background-color: #333;
+        }
+    </style>
 </head>
-
 <body>
-  <!-- Swiper -->
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-      <div class="swiper-slide">Slide 7</div>
-      <div class="swiper-slide">Slide 8</div>
-      <div class="swiper-slide">Slide 9</div>
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-      <div class="swiper-slide">Slide 7</div>
-      <div class="swiper-slide">Slide 8</div>
-      <div class="swiper-slide">Slide 9</div>
+
+    <div class="slider" id="slider">
+        <div class="slider-container">
+            <!-- Page 1 -->
+            <div class="slider-page">
+                <div class="grid-card">Card 1</div>
+                <div class="grid-card">Card 2</div>
+                <div class="grid-card">Card 3</div>
+                <div class="grid-card">Card 4</div>
+                <div class="grid-card">Card 5</div>
+                <div class="grid-card">Card 6</div>
+                <div class="grid-card">Card 7</div>
+                <div class="grid-card">Card 8</div>
+                <div class="grid-card">Card 9</div>
+            </div>
+            <!-- Page 2 -->
+            <div class="slider-page">
+                <div class="grid-card">Card 10</div>
+                <div class="grid-card">Card 11</div>
+                <div class="grid-card">Card 12</div>
+                <div class="grid-card">Card 13</div>
+                <div class="grid-card">Card 14</div>
+                <div class="grid-card">Card 15</div>
+                <div class="grid-card">Card 16</div>
+                <div class="grid-card">Card 17</div>
+                <div class="grid-card">Card 18</div>
+            </div>
+            <!-- Page 3 -->
+            <div class="slider-page">
+                <div class="grid-card">Card 19</div>
+                <div class="grid-card">Card 20</div>
+                <div class="grid-card">Card 21</div>
+                <div class="grid-card">Card 22</div>
+                <div class="grid-card">Card 23</div>
+                <div class="grid-card">Card 24</div>
+                <div class="grid-card">Card 25</div>
+                <div class="grid-card">Card 26</div>
+                <div class="grid-card">Card 27</div>
+            </div>
+        </div>
+        <button class="prev-btn">Prev</button>
+        <button class="next-btn">Next</button>
+        <div class="pagination">
+            <div class="pagination-dot active" data-index="0"></div>
+            <div class="pagination-dot" data-index="1"></div>
+            <div class="pagination-dot" data-index="2"></div>
+        </div>
     </div>
-    <div class="swiper-pagination"></div>
-  </div>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        let currentPage = 0;
+        const pages = document.querySelectorAll('.slider-page');
+        const totalPages = pages.length;
+        const paginationDots = document.querySelectorAll('.pagination-dot');
 
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3,
-      grid: {
-        rows: 3,
-      },
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        loop: true,
-      },
-    });
-  </script>
+        // Navigation Buttons
+        document.querySelector('.next-btn').addEventListener('click', () => {
+            if (currentPage < totalPages - 1) {
+                currentPage++;
+                updateSlider();
+            }
+        });
+
+        document.querySelector('.prev-btn').addEventListener('click', () => {
+            if (currentPage > 0) {
+                currentPage--;
+                updateSlider();
+            }
+        });
+
+        // Pagination Dots
+        paginationDots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                currentPage = parseInt(e.target.getAttribute('data-index'));
+                updateSlider();
+            });
+        });
+
+        // Update Slider and Pagination
+        function updateSlider() {
+            const sliderWidth = document.querySelector('.slider').offsetWidth;
+            document.querySelector('.slider-container').style.transform = `translateX(-${currentPage * sliderWidth}px)`;
+
+            paginationDots.forEach(dot => dot.classList.remove('active'));
+            paginationDots[currentPage].classList.add('active');
+        }
+
+        // Touch Slide
+        let startX = 0;
+
+        document.getElementById('slider').addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        document.getElementById('slider').addEventListener('touchend', (e) => {
+            let endX = e.changedTouches[0].clientX;
+            if (startX > endX + 50) {
+                // Swipe left
+                if (currentPage < totalPages - 1) {
+                    currentPage++;
+                    updateSlider();
+                }
+            } else if (startX < endX - 50) {
+                // Swipe right
+                if (currentPage > 0) {
+                    currentPage--;
+                    updateSlider();
+                }
+            }
+        });
+    </script>
+
 </body>
-
 </html>
