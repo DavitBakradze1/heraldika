@@ -317,7 +317,7 @@ header{
 }
 
 .news-icon{
-    margin-top: 10px;
+    padding-top: 10px;
 }
 
 .other-news-text{
@@ -336,9 +336,13 @@ header{
     transition: color 0.3s ease; 
 }
 
+.back{
+    color: #A4A4A4;
+    transition: color 0.2s ease-in;
+}
+
 .back:hover{
-    color: #003399; 
-    transition: color 0.3s ease; 
+    color: #003399;
 }
 
 .main-section{

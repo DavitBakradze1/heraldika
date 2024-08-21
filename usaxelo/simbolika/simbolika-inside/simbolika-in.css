@@ -1,0 +1,127 @@
+body{
+  background-color: white;
+}
+
+.simbolika-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 118px;
+  align-items: center;
+}
+
+.gerbi{
+  display: flex;
+  flex-direction: column;
+  padding-top: 66px;
+  align-items: center;
+  gap: 50px;
+}
+
+.file-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.file-line{
+  display: flex;
+  gap: 20px;
+}
+
+.file-box{
+  width: 478px;
+  height: 55px;
+  border-radius: 10px;
+  border: 1px solid #E9E9E9;
+  padding: 21px 15px 18px 19px;
+}
+
+.download{
+  width: 193px;
+  height: 55px;
+  border: 1px solid #E9E9E9;
+  cursor: pointer;
+  padding: 15px 26px 14px 27px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.button-name{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.download:hover{
+  background-color: #003399;
+  transition: all 0.2s ease-in;
+}
+
+.download:hover .name{
+  color: white;
+  transition: all 0.2s ease-in;
+}
+
+.download:hover .pdf-file path{
+  fill: white;
+  transition: all 0.2s ease-in;
+}
+
+.gerbi-container{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 50px;
+  padding-top: 30px;
+  align-items: center;
+}
+
+.popup-box{
+  cursor: pointer;
+}
+
+.popup-text{
+  color: red;
+  text-decoration: underline;
+}
+
+.flag-container{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 39px;
+  padding-top: 84px;
+}
+
+.anthem-container{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 38px;
+  padding-bottom: 80px;
+  gap: 40px;
+}
+
+.adress{
+  width: 596px;
+  height: auto;
+}
+
+.adress-text{
+  font-family: mrglovani;
+  font-size: 10px;
+  text-align: center;
+}
+
+.adress-box{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 222px;
+}

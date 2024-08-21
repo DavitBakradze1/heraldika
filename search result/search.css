@@ -1,0 +1,137 @@
+.search-section{
+  padding-top: 118px;
+
+}
+
+.search-page{
+  width: 100%;
+  border-radius: 10px;
+  background-color: white;
+  padding-top: 38px;
+  padding-left: 113px;
+  padding-bottom: 56.5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.head-box{
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding-bottom: 38px;
+}
+
+.result{
+  font-family: FiraGo-regular;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.input-box{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+}
+
+.search-bar{
+  width: 852px;
+  height: 40px;
+  border: 1px solid #D9D9D9;
+  padding-top: 11px;
+  padding-left: 20px;
+  font-size: 12px;
+  font-family: FiraGo-regular;
+  outline: none;
+  border-radius: 3px;
+}
+
+.submit-search{
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  border: none;
+  background-color: #003399;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.result-card-container{
+  display: flex;
+  flex-direction: column;
+  gap: 35.5px;
+}
+
+.result-card{
+  width:785px;
+  padding-bottom: 35.1px;
+  border-bottom: 1px solid #DBDBDB;
+  display: flex;
+  flex-direction: column;
+}
+
+.angarishi{
+  font-family: mrglovani;
+  font-size: 14px;
+  color: #003399;
+}
+
+.result-box{
+  display: flex;
+  flex-direction: column;
+  gap: 37.4px;
+}
+
+.more{
+  width: 122px;
+  height: 35px;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #003399;
+}
+
+.prev-btn:hover path{
+  fill: #003399;
+}
+
+.next-btn:hover path {
+  fill: #003399;
+}
+
+.pagination {
+  display: flex;
+  gap: 5px;
+  width: 190px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-button{
+  cursor: pointer;
+}
+
+.pagination-button:hover path{
+  fill: #003399;
+}
+
+
+.pagination-dot {
+  color: black;
+  cursor: pointer;
+}
+
+.pagination-dot.active {
+  color: #003399;
+}
+
+.numbers-box{
+  display: flex;
+  padding-top: 63px;
+  padding-bottom: 100px;
+  justify-content: center;
+}
