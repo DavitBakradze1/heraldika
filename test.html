@@ -1,77 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid Slider with Pagination and Touch Slide</title>
-    <style>
-        /* Popup container */
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled Dropdown with Conditional Divs</title>
+  <style>
+    .dropdown-container {
+      position: relative;
+      display: inline-block;
+      width: 200px;
+    }
 
-/* The actual popup (appears on top) */
-.popup .popuptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 50%;
-  left: 50%;
-  margin-left: -80px;
-}
+    .selector {
+      width: 100%;
+      height: 38px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      outline: none;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
 
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
+    .selector:hover {
+      background-color: #e0e0e0;
+      border-color: #999;
+    }
 
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
-}
+    .dropdown-container:hover .dropdown-content {
+      display: block;
+    }
 
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
 
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
-    </style>
+    .dropdown-content .option {
+      padding: 12px 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown-content .option:hover {
+      background-color: #ddd;
+    }
+
+    .content-div {
+      padding: 20px;
+      margin-top: 10px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .small-div {
+      background-color: #e0f7fa;
+      width: 200px;
+      height: 100px;
+      display: block; /* Make small div visible by default */
+    }
+
+    .big-div {
+      background-color: #ffecb3;
+      width: 400px;
+      height: 200px;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="popup" onclick="myFunction()">Click me!
-        <span class="popuptext" id="myPopup">Popup text...</span>
-      </div>
+<div class="dropdown-container">
+  <div class="selector" id="selectedValue">Option 1</div>
+  <div class="dropdown-content">
+    <div class="option" onclick="selectOption('Option 1')">Option 1</div>
+    <div class="option" onclick="selectOption('Option 2')">Option 2</div>
+    <div class="option" onclick="selectOption('Option 3')">Option 3</div>
+    <div class="option" onclick="selectOption('Option 4')">Option 4</div>
+  </div>
+</div>
 
-    <script>
-     // When the user clicks on <div>, open the popup
-function myFunction() {
-  var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
-}
-    </script>
+<div id="smallDiv" class="content-div small-div">This is a small div.</div>
+<div id="bigDiv" class="content-div big-div">This is a big div.</div>
+
+<script>
+  function selectOption(option) {
+    document.getElementById('selectedValue').textContent = option;
+    
+    // Hide both divs initially
+    document.getElementById('smallDiv').style.display = 'none';
+    document.getElementById('bigDiv').style.display = 'none';
+
+    // Show the appropriate div based on the selected option
+    if (option === 'Option 1' || option === 'Option 3') {
+      document.getElementById('smallDiv').style.display = 'block';
+    } else if (option === 'Option 2' || option === 'Option 4') {
+      document.getElementById('bigDiv').style.display = 'block';
+    }
+  }
+</script>
 
 </body>
 </html>
