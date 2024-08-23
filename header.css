@@ -82,12 +82,102 @@ a{
 .nav-link{
   transition: color 0.2s ease-in-out;
   transition-delay: 0.2s;
+  font-size: 14px;
+  font-family: FiraGo-regular;
+  cursor: pointer;
+  position: relative;
 }
 
 .nav-link:hover{
   color: #003399;
 }
 
+
+/*header dropdown menu*/
+
+
+.nav-li{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.council-menu{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+  width: 180px;
+  height: auto;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.council-page{
+  width: 100%;
+  height: 35px;
+  font-family: FiraGo-regular;
+  font-weight: 100;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-top: 5px;
+  transition: 0.2s ease-in;
+  border-radius: 5px;
+}
+
+.council-page:hover{
+  background-color: #F2F2F2;
+}
+
+.nav-link:hover .council-menu{
+  transition: 0.2s ease-in;
+  display: block;
+}
+
+.link-menu{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+  width: 180px;
+  height: auto;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.link-page{
+  width: 100%;
+  height: 50px;
+  font-family: FiraGo-regular;
+  font-weight: 100;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-top: 5px;
+  transition: 0.2s ease-in;
+  border-radius: 5px;
+}
+
+.link-page:hover{
+  background-color: #F2F2F2;
+}
+
+.nav-link:hover .link-menu{
+  transition: 0.2s ease-in;
+  display: block;
+}
+
+
+
+
+/*header dropdown menu*/
 
 .container{
   width: 1090px;
@@ -102,6 +192,7 @@ header{
   position:fixed;
   background-color: white;
   z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .header-box{
@@ -125,50 +216,127 @@ header{
 .nav-box{
   display: flex;
   align-items: center;
+  height: 50px;
 }
 
 .nav-bar{
   display: flex;
   list-style: none;
+  align-items: center;
   gap: 15px;
+  height: 100%;
+}
+
+.nav-selector-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .selector-box{
-  display: grid;
-  width: auto;
-  grid-template-columns: 53px 53px;
-  justify-content: space-between;
+  width: 100px;
+  height: 50px;
+  position: relative;
 }
 
-.search-box{
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search-button{
+.search-input{
+  width: 50px;
+  position: relative;
+  height: 50px;
   border: none;
-  background-color: transparent;
-  cursor: pointer;
+  z-index: 2;
 }
 
 .search{
+  position: absolute;
+  left: 0%;
+  width: 150px;
+  height: 48px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  padding-left: 15px;
+  top: 1px;
+  background:transparent;
   display: none;
+  z-index: 2;
 }
 
-.language{
+.search-button{
+  width: 50px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  right: 0%;
+  top: 1px;
+  cursor: pointer;
+  border: none;
+  border-radius: 24px;
+  background: transparent;
+  z-index: 2;
+}
+
+.search-input:hover{
+  width: 200px;
+  border-radius: 25px;
+  border: 1px solid #A4A4A4;
+  transition: all 0.2s ease-in;
+  z-index: 2;
+}
+
+.search-input:hover .search{
+  display: block;
+  z-index: 2;
 }
 
 .language-selector{
+  position: absolute;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  outline: none;
+  right: 0%;
+  top: 0%;
+}
+
+.language-picker {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.language-picker img {
+  width: 25px; 
+  height: 25px; 
+  margin: 0 5px;
+}
+.language-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  margin-top: 5px;
+  z-index: 1;
+  white-space: nowrap;
+}
+.language-picker:hover .language-options {
+  display: block;
+}
+.language-options div {
+  padding: 5px;
+  cursor: pointer;
+}
+.language-options div:hover {
+  background-color: #f0f0f0;
+}
+.flag {
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 100%;
 }

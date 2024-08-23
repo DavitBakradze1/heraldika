@@ -54,43 +54,32 @@
   height: auto;
 }
 
-.project-card:hover .project-description-box {
-  visibility: visible;
+.debuleba{
+  background-color: #F0F0F0;
 }
 
-.project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
+.history{
+  background-color: #F0F0F0;
 }
 
-.project-description-box {
-  width: 100%;
-  height: 100%;
-  background-color: #131a36;
-  opacity: 0.8;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: center;
-  justify-content: center;
-  visibility: hidden;
+.council-history{
+  background-color: #F0F0F0;
 }
 
-.project-date {
-  font-family: Muli;
-  font-size: 11px;
-  letter-spacing: 0.33px;
-  color: #dddddd;
+.laws{
+  background-color: #F0F0F0;
 }
 
-.project-description-heading {
-  font-family: Glacial Indifference;
-  font-size: 23px;
-  font-weight: 300;
-  color: #ffffff;
+.members{
+  background-color: #F0F0F0;
 }
+
+.partners{
+  background-color: #F0F0F0;
+}  
+
+
+
 
 /*დიზაინი*/
 
