@@ -3,184 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popup Example</title>
+    <title>Responsive Navigation</title>
     <style>
-        /* Basic styling for the popup */
-        .popup {
-            display: none; /* Hidden by default */
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 739px;
-            height: 402px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-            background-color: #fff;
-            z-index: 1000;
-
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
-        .poup-container{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            padding-top: 50px;
-            gap: 34px;
-        }
-
-
-        .popup.active {
-            display: block; 
-        }
-        .overlay {
-            display: none; 
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-        .overlay.active {
-            display: block; 
-        }
-
-        .popup-name{
-            font-family: mrglovani;
-            color: red;
-            width: 100%;
-            text-align: center;
-            font-size: 14px;
-        }
-
-        .popup-form-container{
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 659px;
-            height: 162px;
-            margin-left: 40px;
-        }
-
-        .popup-form-line{
-            display: flex;
-            align-items: center;
-            gap: 23px;
-            width: 100%;
-        }
-
-        .popup-form-box{
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .form{
-            width: 318px;
-            height: 45px;
-            border: 1px solid #E9E9E9;
-            outline: none;
-            padding-left: 10px;
-            border-radius: 10px;
-        }
-
-        .label{
-            font-family: mrglovani-regular;
-            font-size: 12px;
-            font-weight: 100;
-        }
-
-        .checkbox-line{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding-left: 33px;
-        }
-
-        .checkbox-container{
-            display: flex;
-            flex-direction: column;
-            gap: 23px;
-        }
-
-        .send-request{
-            display: flex;
-            width: 250px;
-            height: 40px;
-            border-radius: 5px;
-            align-items: center;
-            justify-content: center;
+        .responsive-nav {
+            background-color: #4CAF50;
             color: white;
-            font-family: mrglovani-regular;
-            font-size: 12px;
+            padding: 10px;
+            text-align: center;
             cursor: pointer;
-            margin-left: 244px;
-            background-color: #003399;
             border: none;
+            border-radius: 5px;
+            width: 310px;
+            box-sizing: border-box;
+            margin: 0;
+            position: relative;
         }
 
+        .nav-bar {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 310px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            display: none; /* Initially hidden */
+            background-color: #f9f9f9;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+        }
 
+        .nav-li {
+            position: relative;
+        }
 
+        .nav-link {
+            display: block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            background-color: #45a049;
+        }
+
+        .nav-bar ul {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-top: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .nav-bar .nav-li .nav-link::after {
+            content: ' ▼';
+            font-size: 12px;
+            float: right;
+        }
+
+        .nav-bar .nav-li.open > ul {
+            display: block;
+        }
+
+        .nav-bar .nav-li ul li {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .nav-bar .nav-li ul li:last-child {
+            border-bottom: none;
+        }
+
+        .nav-bar .nav-li ul li a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+            background-color: #f9f9f9;
+        }
+
+        .nav-bar .nav-li ul li a:hover {
+            background-color: #e1e1e1;
+        }
     </style>
 </head>
 <body>
-    <p id="popupText">Click here to see the popup</p>
-
-    <div id="overlay" class="overlay"></div>
-
-    <div id="popup" class="popup">
-        <div class="poup-container">
-            <span class="popup-name">
-                მაღალი გარჩევადობის ფაილის მოთხოვნა
-            </span>
-            <div class="popup-form-container">
-                <div class="popup-form-line">
-                    <div class="popup-form-box">
-                        <label for="name" class="label">სახელი</label>
-                        <input type="text" name="name" id="name" class="form">
-                    </div>
-                    <div class="popup-form-box">
-                        <label for="lastname" class="label">გვარი</label>
-                        <input type="text" name="lastname" id="lastname" class="form">
-                    </div>
-                </div>
-                <div class="popup-form-line">
-                    <div class="popup-form-box">
-                        <label for="name" class="label">ელ.ფოსტა</label>
-                        <input type="email" name="email" id="email" class="form">
-                    </div>
-                    <div class="popup-form-box">
-                        <label for="tel" class="label">ტელეფონი</label>
-                        <input type="tel" name="tel" id="lastname" class="form">
-                    </div>
-                </div>
-            </div>
-            <div class="checkbox-container">
-                <div class="checkbox-line">
-                    <input type="checkbox" name="checkbox" id="checkbox">
-                    <label for="checkbox" class="label">ვეთანხმები წესებსა და პირობებს, რომ მიღებულ ფაილს არ დავშლი, შევცვლი და არ გამოვიყენებ არასწორად.</label>
-                </div>
-                <button type="submit" class="send-request">
-                    მოთხოვნის გაგზავნა
-                </button>
-            </div>
-        </div>
-    </div>
+    <button class="responsive-nav">ნავიგაცია</button>
+    <ul class="nav-bar">
+        <li class="nav-li">
+            <a class="nav-link" href="news-page/news.html">სიახლეები</a>
+        </li>
+        <li class="nav-li">
+            <a class="nav-link" href="#">საბჭოს შესახებ</a>
+            <ul class="council-menu">
+                <li><a href="debuleba/debuleba.html">დებულება</a></li>
+                <li><a href="debuleba/debuleba.html">შექმნის ისტორია</a></li>
+                <li><a href="debuleba/debuleba.html">საბჭოს შექმნის ისტორია</a></li>
+                <li><a href="debuleba/debuleba.html">კანონები</a></li>
+                <li><a href="debuleba/debuleba.html">თანამშრომლები</a></li>
+                <li><a href="debuleba/debuleba.html">მემორანდუმები/თანამშრომლობა</a></li>
+            </ul>
+        </li>
+        <li class="nav-li">
+            <a class="nav-link" href="#">ბმულები</a>
+            <ul class="link-menu">
+                <li><a href="blankebi/blank.html">ჰერალდიკური ორგანიზაციების ბმულები</a></li>
+                <li><a href="blankebi/blank.html">მთავრობის, პარლამენტის ვებ-საიტის ბმულები</a></li>
+            </ul>
+        </li>
+        <li>
+            <a class="nav-link" href="gallery/index-gallery.html">გალერეა</a>
+        </li>
+        <li>
+            <a class="nav-link" href="contact/contact.html">კონტაქტი</a>
+        </li>
+    </ul>
 
     <script>
-        document.getElementById('popupText').addEventListener('click', function() {
-            document.getElementById('popup').classList.add('active');
-            document.getElementById('overlay').classList.add('active');
+        document.querySelector('.responsive-nav').addEventListener('click', function() {
+            const navBar = document.querySelector('.nav-bar');
+            navBar.style.display = navBar.style.display === 'block' ? 'none' : 'block';
         });
 
-        document.getElementById('overlay').addEventListener('click', function(event) {
-            if (event.target === this) { // Ensure click is on the overlay itself, not its children
-                document.getElementById('popup').classList.remove('active');
-                document.getElementById('overlay').classList.remove('active');
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                if (this.nextElementSibling && this.nextElementSibling.tagName === 'UL') {
+                    event.preventDefault();
+                    const parentLi = this.parentElement;
+                    parentLi.classList.toggle('open');
+                    const otherLi = document.querySelectorAll('.nav-li').forEach(li => {
+                        if (li !== parentLi) {
+                            li.classList.remove('open');
+                        }
+                    });
+                }
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.responsive-nav') && !event.target.closest('.nav-bar')) {
+                document.querySelector('.nav-bar').style.display = 'none';
+                document.querySelectorAll('.nav-li.open').forEach(li => {
+                    li.classList.remove('open');
+                });
             }
         });
     </script>
