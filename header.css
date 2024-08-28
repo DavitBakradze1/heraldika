@@ -61,7 +61,13 @@ body {
   font-size: 16px;
 }
 
-.mrglovani-regular, .mrglovani-small {
+.mrglovani-regular {
+  font-size: 12px;
+  color: #000000;
+  font-weight: 100;
+}
+
+.mrglovani-small {
   font-size: 12px;
   color: #A4A4A4;
 }
@@ -455,15 +461,21 @@ header {
   .nav-bar{
     flex-direction: column;
   }
-
-
  }
 
  @media (max-width:540px) {
+  .footer-logo{
+    width: 300px;
+  }
+
   .footer-name{
     font-size: 12px;
     height: auto;
     width: auto;
+  }
+
+  .bmulebi-card {
+    width: 300px;
   }
   
  }
@@ -471,11 +483,11 @@ header {
  @media (max-width:374px) {
   .footer-box{
     height: 330px;
-}
+  }
 
-.bottom-box{
-    height: 225px;
-}
+  .bottom-box{
+      height: 225px;
+  }
 
   
  }

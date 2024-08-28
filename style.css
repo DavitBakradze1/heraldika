@@ -461,12 +461,13 @@ img {
  }
 }
 
+
+
+
+    
 @media (max-width:374px) {
     .grid-text-box{
         width: 310px;
         height: 90px;
     }
-
-
-    
 }

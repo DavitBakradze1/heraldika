@@ -146,3 +146,94 @@
   fill: #003399;
   transition: fill 0.2s ease-in;
 }
+
+@media (max-width:1089px) {
+
+  .about-logo {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .about-flag{
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .borjomi{
+    padding-top: 240px;
+  }
+  
+}
+
+@media (max-width:768px) {
+  .borjomi{
+    padding-top: 48px;
+  }
+
+
+  .file-line{
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .download{
+    background-color: #003399;
+  }
+
+  .pdf-file path{
+    fill: white;
+  }
+
+  .about-logo{
+    margin-bottom: 50px;
+  }
+
+  .logo-text{
+    width: 90%;
+  }
+
+  .flag-text{
+    width: 90%;
+  }
+
+  .text-box{
+    width: 90%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 80px;
+  }
+
+  .file-box{
+    width: 310px;
+  }
+
+  .text-page{
+    padding-left: 0%;
+  }
+  
+}
+
+@media (max-width:424px) {
+
+  .social-box{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .file-box{
+    height: auto;
+    width: 270px;
+  }
+
+  img{
+    width: 310px;
+    height: auto;
+  }
+
+  .text-box{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+}

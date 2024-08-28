@@ -2,8 +2,6 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-;
-
 }
 
 .slider-container {
@@ -15,10 +13,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 35px;
+  gap: 30px;
   width: 100%;
   flex-shrink: 0;
-  padding: 20px;
 }
 
 .grid-card {
@@ -58,5 +55,14 @@
 
 .pagination-dot.active {
   color: #003399;
+}
+
+@media (max-width:1235px) {
+  .slider-page{
+    display: flex;
+    flex-wrap: wrap;   
+    justify-content: center;
+  }
+  
 }
 

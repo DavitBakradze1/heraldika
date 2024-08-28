@@ -36,12 +36,21 @@
   transition: all 0.3s;
   transition-delay: 0.2s;
   cursor: pointer;
+
+}
+
+.project{
   width: 270px;
   height: 40px;
   border-radius: 5px;
   background-color: white;
   padding-top: 10px;
   padding-left: 14px;
+}
+
+.project:hover{
+  background-color: #F0F0F0;
+  transition: all 0.2s ease-in;
 }
 
 .project-name.clicked {
@@ -54,29 +63,11 @@
   height: auto;
 }
 
-.debuleba{
+.project-active{
   background-color: #F0F0F0;
 }
 
-.history{
-  background-color: #F0F0F0;
-}
-
-.council-history{
-  background-color: #F0F0F0;
-}
-
-.laws{
-  background-color: #F0F0F0;
-}
-
-.members{
-  background-color: #F0F0F0;
-}
-
-.partners{
-  background-color: #F0F0F0;
-}  
+  
 
 
 
@@ -229,4 +220,97 @@
   width: 100%;
   text-align: center;
   justify-content: center;
+}
+
+
+@media (max-width:1090px) {
+  .memorandum-section{
+    padding-top: 240px;
+  }
+
+  .project-grid{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-name-box{
+    width: 700px;
+    padding-left: 0px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+}
+
+@media (max-width:768px) {
+  .project-name-box{
+    width: 100%;
+    padding-left: 0px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .memorandum-section{
+    padding-top: 40px;
+  }
+
+  .text-page{
+    padding: 25px 10px 141px 10px;
+  }
+
+  .debuleba-line{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .file-line{
+    width: 100%;
+    height: auto;
+    padding: 13px 19px;
+  }
+
+  .download{
+    background-color: #003399;
+    color: white;
+  }
+
+  .pdf path{
+    fill: white;
+  }
+
+  .members-container{
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+  }
+
+  .project-card{
+    width: 425px;
+  }
+
+
+  .member-card{
+    padding: 0%;
+    width: 100%;
+  }
+
+  .memorandum-img{
+    width: 424px;
+  }
+
+  img{
+    width: 100%;
+  }
+  
+}
+
+
+@media (max-width:424px){
+  .project-card{
+    width: 310px;
+  }
+
+  .memorandum-img{
+    width: 310px;
+  }
 }
