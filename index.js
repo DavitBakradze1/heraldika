@@ -27,7 +27,21 @@ var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     spaceBetween: 23,
     centeredSlides: false,
-    loop: true
+    loop: true,
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        500: {
+            slidesPerView: 2,
+        },
+        1000: {
+            slidesPerView: 3,
+        },
+        1920: {
+            slidesPerView: 3,
+        }
+    }
 });
 
 function selectLanguage(code) {

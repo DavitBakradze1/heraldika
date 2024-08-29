@@ -55,7 +55,7 @@
 }
 
 .card:hover .img-tag{
-  visibility: hidden;
+  display: none;
   transition: visibility 0.2s ease-in;
 }
 
@@ -66,12 +66,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   height: auto;
-  visibility: hidden;
+  display: none;
 }
 
 .card:hover .hidden-img-tag{
-  visibility: visible;
-  transition: visibility 0.2s ease-out;
+  display: block;
+  transition: visibility 0.2s ease-in;
 }
 
 @media (max-width:1200px) {
