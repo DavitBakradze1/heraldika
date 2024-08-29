@@ -1,6 +1,6 @@
 .search-section{
   padding-top: 118px;
-
+  padding-bottom: 100px;
 }
 
 .search-page{
@@ -19,6 +19,7 @@
   flex-direction: column;
   gap: 22px;
   padding-bottom: 38px;
+  width: 100%;
 }
 
 .result{
@@ -132,6 +133,49 @@
 .numbers-box{
   display: flex;
   padding-top: 63px;
-  padding-bottom: 100px;
   justify-content: center;
+}
+
+
+@media (max-width:1090px) {
+  .search-section{
+    padding-top: 240px;
+  }
+
+  .search-page{
+    padding-left: 0%;
+    align-items: center;
+  }
+
+  .input-box{
+    flex-direction: column;
+  }
+
+  .search-bar{
+    width: 90%;
+  }
+
+  .submit-search{
+    width: 100px;
+  }
+
+  .result-card{
+    width: 90%;
+  }
+
+  .search-name{
+    padding-left: 20px;
+  }
+
+  .result-card{
+    padding-left: 15px;
+    width: 100%;
+  }
+}
+
+@media (max-width:768px) {
+  .search-section{
+    padding-top: 48px;
+  }
+  
 }

@@ -187,10 +187,14 @@ header {
 
 .search-input {
   width: 50px;
-  position: relative;
+  position: absolute;
   height: 50px;
   border: none;
   z-index: 2;
+  left: 0%; 
+  transform: translateX(-50%); 
+  transition: transform 0.3s ease-in-out;
+  background-color: white;
 }
 
 .search {
@@ -221,7 +225,7 @@ header {
   border: none;
   border-radius: 24px;
   background: transparent;
-  z-index: 2;
+  z-index: 20;
 }
 
 .search-input:hover {
@@ -229,12 +233,18 @@ header {
   border-radius: 25px;
   border: 1px solid #A4A4A4;
   transition: all 0.2s ease-in;
-  z-index: 2;
+  z-index: 20;
 }
 
 .search-input:hover .search {
   display: block;
-  z-index: 2;
+  z-index: 20;
+}
+
+
+.search-button:hover ~ .search,
+.search-container:hover .search {
+    transform: translateX(0); 
 }
 
 .language-selector {
@@ -409,14 +419,9 @@ header {
   }
 
   .selector-box{
-    width: auto;
+    width: 100px;
     display: flex;
   }
-
-  .search-input{
-    position: absolute;
-  }
-
 }
 
 @media (max-width:768px) {

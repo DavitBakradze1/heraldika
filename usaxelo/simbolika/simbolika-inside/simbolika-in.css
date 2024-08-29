@@ -128,7 +128,7 @@ body{
 
 
 .popup {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   left: 50%;
   top: 50%;
@@ -242,4 +242,98 @@ body{
   margin-left: 244px;
   background-color: #003399;
   border: none;
+}
+
+
+@media (max-width:1090px) {
+  .simbolika-container{
+    padding-top: 240px;
+  }
+}
+
+@media (max-width:768px) {
+  .simbolika-container{
+    padding-top: 48px;
+  }
+
+  .file-container{
+    gap: 20px;
+  }
+
+
+  .file-line{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .file-box{
+    width: 420px;
+    height: auto;
+  }
+
+  .anthem-img{
+    width: 420px;
+  }
+
+
+  .popup {
+    height: auto;
+    width: 420px;
+  }
+
+  .poup-container{
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    gap: 14px;
+  }
+
+  .popup-form-line{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .popup-form-box{
+    gap: 6px;
+  }
+
+  .form{
+    height: 35px;
+    border-radius: 5px;
+  }
+
+  .popup-form-container{
+    width: auto;
+    height: auto;
+    margin-left: 0%;
+    gap: 10px;
+  }
+
+  .checkbox-container{
+    justify-content: center;
+    gap: 13px;
+  }
+
+  .send-request{
+    margin:0px auto;
+  }
+}
+
+@media (max-width:425px) {
+  .file-box{
+    width: 310px;
+  }
+
+  .anthem-img{
+    width: 310px;
+  }
+
+  .popup {
+    height: auto;
+    width: 310px;
+  }
+
+  .form{
+    width: 280px;
+  }
 }
