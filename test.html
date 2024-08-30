@@ -4,166 +4,275 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
+body {
+    font-family: Arial, sans-serif;
+}
 
-        .container {
-            max-width: 1090px;
-            margin: 0 auto;
-        }
+.container {
+    max-width: 1090px;
+    margin: 0 auto;
+}
 
-        .hidden-navigation-container {
-            position: relative;
-            width: 100%;
-        }
+.hidden-header-container {
+    width: 100%;
+    height: 70px;
+    position: relative; 
+}
 
-        .navigation-menu {
-            width: 100%;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f2f2f2; 
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            color: #333;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, box-shadow 0.3s;
-        }
+.hidden-header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        .navigation-menu:hover {
-            background-color: #e0e0e0; 
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
+.dropdown-content {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 700px;
+    height: 0; 
+    background-color: aqua;
+    overflow: hidden; 
+    transition: height 0.3s ease; 
+}
 
-        .hid-navigation-bar {
-            width: 100%;
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 1000; 
-            transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
-            max-height: 0;
-            overflow: hidden;
-        }
+.hidden-link {
+    width: 650px; 
+    padding: 10px;
+    background-color: aliceblue;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    position: relative; 
+}
 
-        .hidden-navigation-container:hover .hid-navigation-bar {
-            display: block;
-            max-height: 500px; 
-            opacity: 1;
-        }
+.hidden-link-active{
+  height: 300px !important;
+}
 
-        .hidden-link {
-            display: block;
-            padding: 10px;
-            background-color: #e0f7fa; 
-            border-radius: 5px;
-            margin: 5px;
-            text-decoration: none;
-            color: #00796b;
-            font-size: 14px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
+.hidden-link:hover .hidden-link-menu{
+  display: block;
+}
 
-        .hidden-link:hover {
-            background-color: #b2ebf2; 
-        }
+.hidden-link:hover .hidden-link-line{
+  display: block;
+}
 
-        .box {
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #7e57c2; 
-            color: white;
-            border-radius: 10px;
-            position: relative;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+.hidden-link:hover .hidden-link-box{
+  display: block;
+}
 
-        .box:hover {
-            background-color: #5e35b1; 
-        }
+.bmulebi-link-active{
+  height: 150px !important;
+}
 
-        .box-hidden-nav {
-            display: none;
-        }
 
-        .box:hover .box-hidden-nav {
-            display: block;
-            position: absolute;
-            width: 100%;
-            top: 100%;
-            left: 0;
-            background-color: #e0f2f1; 
-            border-radius: 5px;
-            padding: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-        }
+.hidden-link-menu {
+    position: absolute;
+    top:40px;
+    width: 100%;
+    margin-top: 15px;
+    overflow: hidden; 
+    transition: max-height 0.3s ease;
+    z-index: 1000;
+    display: none; 
+}
 
-        .box-hidden-link {
-            display: block;
-            padding: 10px;
-            background-color: #b2dfdb; 
-            border-radius: 5px;
-            text-decoration: none;
-            color: #004d40;
-            font-size: 14px;
-            transition: background-color 0.3s;
-        }
+.hidden-link-box {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
 
-        .box-hidden-link:hover {
-            background-color: #80cbc4; 
-        }
+.dropdown-link-box{
+  width: 100%;
+  height: 100%;
+}
 
-        .box-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-        }
+.menu {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    height: 40px;
+    background-color: bisque;
+}
+
+
+.hidden-link-line{
+  width: 650px;
+  display: flex;
+  height: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: none;
+}
+        
+
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="hidden-navigation-container">
-            <div class="navigation-menu">
-                ნავიგაცია
+        <div class="hidden-header-container">
+          <div class="hidden-header">
+              <a href="http://">
+                  <div class="hidden-logo">
+                      <img src="logo_geo.png" alt="" srcset="" style="height: 40px; width: 41px;">
+                  </div>
+              </a>
+              <div class="hidden-navigation-menu">
+                  <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z" fill="#000000"></path> </g></svg>
+              </div>
+          </div>
+          <div class="dropdown-content">
+            <div class="hidden-link ">
+              <a href="http://" class="dropdown-link-box">
+                სიახლეები
+              </a>
             </div>
-            <div class="hid-navigation-bar">
-                <a href="#" class="hidden-link">სიახლეები</a>
-                <div class="box">
-                    საბჭოს შესახებ
-                    <div class="box-hidden-nav">
-                        <a href="http://" class="box-hidden-link">დებულება</a>
-                        <a href="http://" class="box-hidden-link">შექმნის ისტორია</a>
-                        <a href="http://" class="box-hidden-link">ბორდის შექმნის ისტორია</a>
-                        <a href="http://" class="box-hidden-link">კანონები</a>
-                        <a href="http://" class="box-hidden-link">თანამშრომლები</a>
-                        <a href="http://" class="box-hidden-link">მემორანდუმები/თანამშრომლობა</a>
-                    </div>
+            <div class="hidden-link" id="hidden-link">
+              <div class="menu">
+                საბჭოს შესახებ 
+                <img src="down-arrow-5-svgrepo-com.svg" alt="" srcset="" style="width: 20px; height: 20px;">
+              </div>
+              <div class="hidden-link-menu" id="dropdownMenu">
+                <div class="hidden-link-line ">
+                  <a href="http://" class="hidden-link-box">
+                    დებულება
+                  </a>
                 </div>
-                <div class="box">
-                    ბმულები
-                    <div class="box-hidden-nav">
-                        <a href="http://" class="box-hidden-link">ჰერალდიკური ორგანიზაციების ბმულები</a>
-                        <a href="http://" class="box-hidden-link">მთავრობის, პარლამენტის ვებ-საიტის ბმულები</a>
-                    </div>
+                <div class="hidden-link-line">
+                  <a href="http://" class="hidden-link-box">
+                    დებულება
+                  </a>
                 </div>
-                <a href="#" class="hidden-link">გალერეა</a>
-                <a href="#" class="hidden-link">კონტაქტი</a>
+                <div class="hidden-link-line">
+                  <a href="http://" class="hidden-link-box">
+                    დებულება
+                  </a>
+                </div>
+                <div class="hidden-link-line ">
+                  <a href="http://" class="hidden-link-box">
+                    დებულება
+                  </a>
+                </div>
+                <div class="hidden-link-line">
+                  <a href="http://" class="hidden-link-box">
+                    დებულება
+                  </a>
+                </div>
+              </div>
             </div>
+            <div class="hidden-link" id="bmulebi-hidden-link">
+              <div class="menu">
+                ბმულები
+                <img src="down-arrow-5-svgrepo-com.svg" alt="" srcset="" style="width: 20px; height: 20px;">
+              </div>
+              <div class="hidden-link-menu" id="bmulebi-dropdownMenu">
+                <div class="hidden-link ">
+                  <a href="http://" class="hidden-link-box">
+                    დებულება
+                  </a>
+                </div>
+                <div class="hidden-link ">
+                  <a href="http://" class="hidden-link-box">
+                    დებულება
+                  </a>
+                </div>
+
+              </div>
+            </div>
+            <div class="hidden-link">
+              <a href="http://" class="dropdown-link-box">
+                სიახლეები
+              </a>
+            </div>
+            <div class="hidden-link">
+              <a href="http://" class="dropdown-link-box">
+                სიახლეები
+              </a>
+            </div>
+          </div>
         </div>
     </div>
+
+    <script>
+
+    
+document.addEventListener('DOMContentLoaded', function() {
+    const hiddenNavigationMenu = document.querySelector('.hidden-navigation-menu');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    
+    hiddenNavigationMenu.addEventListener('click', function() {
+        
+        if (dropdownContent.style.height === 'auto') {
+            dropdownContent.style.height = '0'; n
+        } else {
+            dropdownContent.style.height = 'auto'; 
+        }
+    });
+    
+    document.addEventListener('click', function(event) {
+        if (!dropdownContent.contains(event.target) && !hiddenNavigationMenu.contains(event.target)) {
+            dropdownContent.style.height = '0px'; 
+        }
+    });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+            const hiddenLink = document.getElementById('hidden-link');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+
+            hiddenLink.addEventListener('click', function(event) {
+                event.stopPropagation(); 
+                hiddenLink.classList.toggle('hidden-link-active');
+            });
+
+            document.addEventListener('click', function() {
+                hiddenLink.classList.remove('hidden-link-active'); 
+            });
+
+            dropdownMenu.addEventListener('click', function(event) {
+                event.stopPropagation(); 
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const bmulebiHiddenLink = document.getElementById('bmulebi-hidden-link');
+            const bmulebiDropdownMenu = document.getElementById('bmulebi-dropdownMenu');
+
+            bmulebiHiddenLink.addEventListener('click', function(event) {
+                event.stopPropagation(); 
+                bmulebiHiddenLink.classList.toggle('bmulebi-link-active');
+            });
+
+            document.addEventListener('click', function() {
+                bmulebiHiddenLink.classList.remove('bmulebi-link-active'); 
+            });
+
+            bmulebiDropdownMenu.addEventListener('click', function(event) {
+                event.stopPropagation(); 
+            });
+        });
+
+
+
+
+
+
+
+
+    </script>
 </body>
 </html>
 

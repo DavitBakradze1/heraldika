@@ -41,7 +41,7 @@
 
 /*დროფდაუნ მენიუ*/
 
-.dropdown-container {
+.blank-dropdown-container {
   position: relative;
   display: inline-block;
   width: 372px;
@@ -67,11 +67,11 @@
   border-color: #999;
 }
 
-.dropdown-container:hover .dropdown-content {
+.blank-dropdown-container:hover .blank-dropdown-content {
   display: block;
 }
 
-.dropdown-content {
+.blank-dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -196,6 +196,18 @@
 
   .blank-section{
     padding-top: 48px;
+  }
+
+  .blank-dropdown-container{
+    width: 100%;
+  }
+
+  .blank-dropdown-content{
+    width: 100%;
+  }
+  
+  .option{
+    width: auto;
   }
   
 }

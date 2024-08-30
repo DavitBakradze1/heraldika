@@ -44,13 +44,3 @@ var swiper = new Swiper(".mySwiper", {
     }
 });
 
-function selectLanguage(code) {
-    console.log('Selected language:', code);
-    const picker = document.querySelector('.language-picker');
-    const flagSrc = {
-        'en': 'flag-for-flag-united-kingdom-svgrepo-com.svg',
-        'ge': 'flag-for-flag-georgia-svgrepo-com.svg'
-    };
-    picker.querySelector('img').src = flagSrc[code];
-    picker.querySelector('img').alt = code.charAt(0).toUpperCase() + code.slice(1);
-}
