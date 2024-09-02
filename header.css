@@ -403,8 +403,11 @@ height: 150px !important;
 }
 
 .dropdown-link-box{
-width: 100%;
-height: 100%;
+  width: 100%;
+  height: 100%;
+  font-family: FiraGo-regular;
+  font-size: 12px;
+  font-weight: 100;
 }
 
 .menu {
@@ -413,6 +416,9 @@ height: 100%;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  font-family: FiraGo-regular;
+  font-weight: 100;
+  font-size: 12px;
 }
 
 
