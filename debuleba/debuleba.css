@@ -225,7 +225,7 @@
 
 @media (max-width:1090px) {
   .memorandum-section{
-    padding-top: 240px;
+    padding-top: 48px;
   }
 
   .project-grid{
@@ -234,10 +234,8 @@
   }
 
   .project-name-box{
-    width: 700px;
-    padding-left: 0px;
-    justify-content: center;
-    align-items: center;
+    width: 400px;
+    padding-left: 20px;
   }
   
 }

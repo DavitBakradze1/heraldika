@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const dots = document.querySelectorAll('.dot');
     const slides = document.querySelectorAll('.slide');
 
+    let startX, currentIndex = 0;
+
     function showSlide(index) {
         slides.forEach((slide, i) => {
             slide.style.display = i === index ? 'block' : 'none';
@@ -9,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dots.forEach((dot, i) => {
             dot.classList.toggle('active', i === index);
         });
+        currentIndex = index;
     }
 
     function handleDotClick(event) {
@@ -16,12 +19,71 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(value);
     }
 
+    function handleMouseDown(event) {
+        startX = event.clientX;
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mouseup', handleMouseUp);
+    }
+
+    function handleMouseMove(event) {
+        const moveX = event.clientX - startX;
+        const threshold = 50; 
+        if (moveX < -threshold && currentIndex < slides.length - 1) {
+            showSlide(currentIndex + 1);
+            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('mouseup', handleMouseUp);
+        } else if (moveX > threshold && currentIndex > 0) {
+            showSlide(currentIndex - 1);
+            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('mouseup', handleMouseUp);
+        }
+    }
+
+    function handleMouseUp() {
+        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mouseup', handleMouseUp);
+    }
+
+    function handleTouchStart(event) {
+        startX = event.touches[0].clientX;
+        document.addEventListener('touchmove', handleTouchMove);
+        document.addEventListener('touchend', handleTouchEnd);
+    }
+
+    function handleTouchMove(event) {
+        const moveX = event.touches[0].clientX - startX;
+        const threshold = 50; 
+        if (moveX < -threshold && currentIndex < slides.length - 1) {
+            showSlide(currentIndex + 1);
+            document.removeEventListener('touchmove', handleTouchMove);
+            document.removeEventListener('touchend', handleTouchEnd);
+        } else if (moveX > threshold && currentIndex > 0) {
+            showSlide(currentIndex - 1);
+            document.removeEventListener('touchmove', handleTouchMove);
+            document.removeEventListener('touchend', handleTouchEnd);
+        }
+    }
+
+    function handleTouchEnd() {
+        document.removeEventListener('touchmove', handleTouchMove);
+        document.removeEventListener('touchend', handleTouchEnd);
+    }
+
+    
     showSlide(0);
 
+    
     dots.forEach(dot => {
         dot.addEventListener('click', handleDotClick);
     });
+
+    
+    slides.forEach(slide => {
+        slide.addEventListener('mousedown', handleMouseDown);
+        slide.addEventListener('touchstart', handleTouchStart);
+    });
 });
+
 
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,

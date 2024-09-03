@@ -71,3 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
         event.stopPropagation(); 
     });
 });
+
+
+function goToPage(){
+    window.location.href = "search result/search.html";
+}
