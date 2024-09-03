@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/blank.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <script src="../script/blank.js" defer></script>
+  <script src="../script/header.js" defer></script>
+  <title>ბლანკები</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+        <div class="header-box">
+            <a href="index.html">
+                <div class="logo-box">
+                    <div class="logo">
+                        <img src="../photo/logo_geo.png" alt="" srcset="" style="height: 40.22px; width: 41.69px;">                              
+                    </div>
+                    <div class="name-box">
+                        <div class="p-name">საქართველოს პარლამენტთან არსებული ჰერალდიკის სახელმწიფო საბჭო</div>
+                    </div>
+                </div>
+            </a>
+            <div class="nav-box">
+                <ul class="nav-bar">
+                    <li class="nav-li">
+                        <a class="nav-link" href="news.html" >სიახლეები</a>
+                    </li>
+                    <li class="nav-link nav-li" >
+                      საბჭოს შესახებ
+                      <ul class="council-menu">
+                        <a href="debuleba.html">
+                            <li class="council-page">დებულება</li>
+                        </a>
+                        <a href="history.html">
+                            <li class="council-page">შექმნის ისტორია</li>
+                        </a>
+                        <a href="council-history.html">
+                            <li class="council-page">საბჭოს შექმნის ისტორია</li>
+                        </a>
+                        <a href="laws.html">
+                            <li class="council-page">კანონები</li>
+                        </a>
+                        <a href="members.html">
+                            <li class="council-page">თანამშრომლები</li>
+                        </a>
+                        <a href="partners.html">
+                            <li class="council-page">მემორანდუმები/თანამშრომლობა</li>
+                        </a>
+                      </ul>
+                    </li>
+                    <li class="nav-link nav-li">
+                          ბმულები
+                          <ul class="link-menu">
+                            <a href="bmulebi.html">
+                                <li class="link-page">ჰერალდიკური ორგანიზაციების ბმულები</li>
+                            </a>
+                            <a href="bmulebi-government.html">
+                                <li class="link-page">მთავრობის, პარლამენტის ვებ-საიტის ბმულები</li>
+                            </a>
+                          </ul>
+                    </li>
+                    <li class="nav-li">
+                        <a class="nav-link" href="index-gallery.html" >გალერეა</a>
+                    </li>
+                    <li class="nav-li">
+                        <a class="nav-link" href="contact.html" >კონტაქტი</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-selector-box">
+                <div class="selector-box">
+                    <div class="search-input">
+                        <input type="search" name="seaerch" id="search" class="search">
+                        <button type="submit" class="search-button" onclick="goToPage()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19">
+                                <path id="search" d="M22.353,21.362l-5.309-5.337a7.735,7.735,0,1,0-1.019,1.019l5.337,5.309ZM4.773,11.1A6.329,6.329,0,1,1,11.1,17.431,6.329,6.329,0,0,1,4.773,11.1Z" transform="translate(-3.353 -3.353)" fill="#039"/>
+                              </svg>                              
+                        </button>
+                    </div>
+                    <div class="language-selector">
+                        <div class="language-picker">
+                            <img src="../photo/flag-for-flag-georgia-svgrepo-com.svg" alt="Georgian Flag">
+                            <img src="../photo/down-arrow-5-svgrepo-com.svg" alt="" srcset="" style="width: 20px; height: 20px;">
+                            <div class="language-options">
+                                <div onclick="selectLanguage('en')">
+                                    <img src="../photo/flag-for-flag-united-kingdom-svgrepo-com.svg" alt="English Flag" class="flag">
+                                </div>
+                                <div onclick="selectLanguage('ge')">
+                                  <img src="../photo/flag-for-flag-georgia-svgrepo-com.svg" alt="Georgian Flag" class="flag">
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hidden-header-box">
+            <div class="hidden-header-container">
+                <div class="hidden-header">
+                    <a href="index.html">
+                        <div class="hidden-logo">
+                            <img src="../photo/logo_geo.png" alt="" srcset="" style="height: 40px; width: 41px;">
+                        </div>
+                    </a>
+                    <div class="hidden-navigation-menu">
+                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z" fill="#000000"></path> </g></svg>
+                    </div>
+                </div>
+                <div class="dropdown-content">
+                  <div class="hidden-link ">
+                    <a href="news.html" class="dropdown-link-box">
+                      სიახლეები
+                    </a>
+                  </div>
+                  <div class="hidden-link" id="hidden-link">
+                    <div class="menu">
+                      საბჭოს შესახებ 
+                      <img src="../photo/down-arrow-5-svgrepo-com.svg" alt="" srcset="" style="width: 20px; height: 20px;">
+                    </div>
+                    <div class="hidden-link-menu" id="dropdownMenu">
+                      <div class="hidden-link-line ">
+                        <a href="debuleba.html" class="hidden-link-box">
+                          დებულება
+                        </a>
+                      </div>
+                      <div class="hidden-link-line">
+                        <a href="history.html" class="hidden-link-box">
+                          შექმნის ისტორია
+                        </a>
+                      </div>
+                      <div class="hidden-link-line">
+                        <a href="council-history.html" class="hidden-link-box">
+                          საბჭოს შექმნის ისტორია
+                        </a>
+                      </div>
+                      <div class="hidden-link-line ">
+                        <a href="laws.html" class="hidden-link-box">
+                          კანონენბი
+                        </a>
+                      </div>
+                      <div class="hidden-link-line">
+                        <a href="members.html" class="hidden-link-box">
+                          თანამშრომლები
+                        </a>
+                      </div>
+                      <div class="hidden-link-line">
+                        <a href="partners.html" class="hidden-link-box">
+                          თანამშრომლობა/მემორანდუმები
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hidden-link" id="bmulebi-hidden-link">
+                    <div class="menu">
+                      ბმულები
+                      <img src="../photo/down-arrow-5-svgrepo-com.svg" alt="" srcset="" style="width: 20px; height: 20px;">
+                    </div>
+                    <div class="hidden-link-menu" id="bmulebi-dropdownMenu">
+                      <div class="hidden-link-line ">
+                        <a href="bmulebi.html" class="hidden-link-box">
+                          ჰერალდიკური ორგანიზაციების ბმულები
+                        </a>
+                      </div>
+                      <div class="hidden-link-line ">
+                        <a href="bmulebi-government.html" class="hidden-link-box">
+                          მთავრობის, პარლამენტის ვებ-საიტის ბმულები
+                        </a>
+                      </div>
+      
+                    </div>
+                  </div>
+                  <div class="hidden-link">
+                    <a href="index-gallery.html" class="dropdown-link-box">
+                      გალერეა
+                    </a>
+                  </div>
+                  <div class="hidden-link">
+                    <a href="contact.html" class="dropdown-link-box">
+                      კონტაქტი
+                    </a>
+                  </div>
+                  <div class="hidden-link" style="background: transparent; border: none;">
+                    <div class="dropdown-search-box">
+                        <input type="text" name="" id="" class="hidden-search"> 
+                        <button class="hidden-search-button">
+                            <img src="../photo/search.png" alt="" srcset="" style="width: 19px; height: 19px;">
+                        </button>
+                    </div>
+                    <div class="dropdown-language-box">
+                        <div class="hidden-language-box">
+                            <img src="../photo/flag-for-flag-georgia-svgrepo-com.svg" alt="" srcset="" style="width: 25px; height: 25px;">
+                        </div>
+                        <div class="hidden-language-box">
+                            <img src="../photo/flag-for-flag-united-kingdom-svgrepo-com.svg" alt="" srcset="" style="width: 25px; height: 25px;">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="blank-section">
+      <div class="container">
+        <div class="blank">
+          <div class="blank-header">
+            <p class="p-regular">
+              ბლანკები
+            </p>
+          </div>
+          <div class="blank-grid">
+            <div class="blank-type">
+              <div class="box-name">
+                <p class="p-regular" style="color: #989898;">აირჩიეთ ბლანკის ტიპი</p>
+              </div>
+              <div class="blank-container">
+                <div class="blank-type-selector">
+                  <div class="blank-dropdown-container">
+                    <div class="selector" id="selectedValue">სამინისტროს კორესპონდენციის/წერილის
+                      ბლანკის ნიმუში
+                    </div>
+                    <img src="../photo/down-arrow-svgrepo-com-red.svg" style="width: 15px; height: 15px;"></img>
+                    <div class="blank-dropdown-content">
+                      <div class="option" onclick="selectOption('სამინისტროს კორესპონდენციის/წერილის ბლანკის ნიმუში')">
+                        სამინისტროს კორესპონდენციის/წერილის ბლანკის ნიმუში
+                      </div>
+                      <div class="option" onclick="selectOption('სამინისტროს კორესპონდენციის/წერილის ბლანკის ნიმუშები')">სამინისტროს კორესპონდენციის/წერილის ბლანკის ნიმუში</div>
+                      <div class="option" onclick="selectOption('სსიპ-ის ადმინისტრაციულ-სამართლებრივი აქტის ბლანკის ნიმუში')">სსიპ-ის ადმინისტრაციულ-სამართლებრივი აქტის ბლანკის ნიმუში</div>
+                      <div class="option" onclick="selectOption('სსიპ-ის კორესპონდენციის/წერილის ბლანკის ნიმუში')">სსიპ-ის კორესპონდენციის/წერილის ბლანკის ნიმუში</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="small blank-forms">
+                <div class="company-name">
+                  <p class="p-regular" style="color: red;">დაწესებულების სახელწოდება</p>
+                </div>
+                <div class="small-box" id="small-box">
+                  <form  class="form-box">
+                    <div class="input-box">
+                      <input class="input" type="text" name="" id="" placeholder="სახელწოდება - პირველი ხაზი">
+                    </div>
+                    <div class="input-box">
+                      <input class="input" type="text" name="" id="" placeholder="სახელწოდება - პირველი ხაზი">
+                    </div>
+                    <div class="input-box">
+                      <input class="input" type="text" name="" id="" placeholder="სახელწოდება - პირველი ხაზი">
+                    </div>
+                    <div class="input-box">
+                      <input class="input" type="text" name="" id="" placeholder="სახელწოდება - პირველი ხაზი">
+                    </div>
+                  </form>
+                </div>
+                <div class="big-box"  id="big-box">
+                  <form class="form-box">
+                    <div class="input-box">
+                      <input class="input" type="text" name="" id="" placeholder="სახელწოდება - პირველი ხაზი">
+                    </div>
+                    <div class="input-box">
+                      <input class="input" type="text" name="" id="" placeholder="სახელწოდება - მეორე ხაზი">
+                    </div>
+                    <div class="input-box">
+                      <input class="input" type="text" name="" id="" placeholder="სახელწოდება - მესამე ხაზი">
+                    </div>
+                    <div class="input-box">
+                      <input class="input" type="text" name="" id="" placeholder="სახელწოდება - მეოთხე ხაზი">
+                    </div>
+                    <div class="company-name">
+                      <p class="p-regular" style="color: red;">მისამართი</p>
+                    </div>
+                    <div class="input-box">
+                      <input class="input" type="text" name="" id="" placeholder="მისამართი - პირველი ხაზი">
+                    </div>
+                    <div class="input-box">
+                      <input class="input" type="text" name="" id="" placeholder="მისამართი - მეორე ხაზი">
+                    </div>
+                    <div class="company-name">
+                      <p class="p-regular" style="color: red;">ტელეფონი</p>
+                    </div>
+                    <div class="input-box">
+                      <input class="input" type="tel" name="" id="" placeholder="ტელეფონი">
+                    </div>
+                    <div class="company-name">
+                      <p class="p-regular" style="color: red;">ელ.ფოსტა</p>
+                    </div>
+                    <div class="input-box">
+                      <input class="input" type="email" name="" id="" placeholder="ელ.ფოსტა">
+                    </div>
+                  </form>
+                </div>
+                <button class="button">
+                  დოკუმენტის გენერირება
+                </button>
+              </div>
+            </div>
+            <div class="blank-page">
+              <img class="gerbi" src="blank-img/Layer 2.png" alt="" srcset="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <div class="footer-box">
+        <div class="container">
+            <div class="contact-about-box">
+                <div class="page-catalog">
+                    <a href="debuleba.html">
+                        <p class="p-regular-white">საბჭოს შესახებ</p>
+                    </a>
+                    <a href="news.html">
+                        <p class="p-regular-white">სიახლეები</p>
+                    </a>
+                    <a href="blank.html">
+                        <p class="p-regular-white">ბლანკები</p>
+                    </a>
+                    <a href="index-gallery.html">
+                        <p class="p-regular-white">გალერეა</p>
+                    </a>
+                    <a href="bmulebi.html">
+                        <p class="p-regular-white">ბმულები</p>
+                    </a>
+                    <a href="contact.html">
+                        <p class="p-regular-white">კონტაქტი</p>
+                    </a>
+                </div>
+                <div class="page-contact">
+                    <div class="contact-box">
+                        <a class="contact" href="https://maps.app.goo.gl/PBqM6UKKXbXZBYpX6">
+                            <div class="contact-logo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9.796" height="13.714" viewBox="0 0 9.796 13.714">
+                                    <path id="Path_117" data-name="Path 117" d="M41.378,12.16a4.674,4.674,0,0,0-4.9,4.408c0,3.918,4.9,9.306,4.9,9.306s4.9-5.388,4.9-9.306A4.674,4.674,0,0,0,41.378,12.16Zm0,6.857a1.959,1.959,0,1,1,1.959-1.959,1.959,1.959,0,0,1-1.959,1.959Z" transform="translate(-36.48 -12.16)" fill="#295caa"/>
+                                </svg>
+                            </div>
+                            ქ.თბილისი,0114; სანაპიროს 4
+                        </a>
+                    </div>
+                    <div class="contact-box">
+                        <a class="contact" href="tel:+032 2 932 099">
+                            <div class="contact-logo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13.392" height="13.392" viewBox="0 0 13.392 13.392">
+                                    <path id="Path_49" data-name="Path 49" d="M13.392,10.577a3.14,3.14,0,0,1-.1.671,3.779,3.779,0,0,1-.2.652,2.55,2.55,0,0,1-1.16,1.008,3.688,3.688,0,0,1-1.769.485,3.775,3.775,0,0,1-.5-.033,3.908,3.908,0,0,1-.547-.119q-.3-.086-.447-.138t-.528-.195q-.38-.143-.466-.171a8.614,8.614,0,0,1-1.664-.789A14.336,14.336,0,0,1,3.5,9.892,14.336,14.336,0,0,1,1.446,7.381,8.614,8.614,0,0,1,.656,5.716Q.628,5.631.485,5.25T.29,4.722Q.238,4.575.152,4.275a3.908,3.908,0,0,1-.119-.547A3.775,3.775,0,0,1,0,3.224,3.688,3.688,0,0,1,.485,1.455,2.55,2.55,0,0,1,1.493.295,3.779,3.779,0,0,1,2.145.1,3.139,3.139,0,0,1,2.815,0a.533.533,0,0,1,.2.029q.171.057.5.723.1.181.285.514t.333.6q.152.271.295.509.029.038.166.238a2.656,2.656,0,0,1,.2.338.62.62,0,0,1,.067.271A.789.789,0,0,1,4.6,3.7a4.636,4.636,0,0,1-.59.523,5.728,5.728,0,0,0-.59.5.725.725,0,0,0-.271.438.643.643,0,0,0,.048.214,2.076,2.076,0,0,0,.081.195q.033.067.133.228t.109.181A9.983,9.983,0,0,0,5.174,8.218,9.983,9.983,0,0,0,7.409,9.873q.019.01.181.109t.228.133a2.076,2.076,0,0,0,.195.081.643.643,0,0,0,.214.048.725.725,0,0,0,.438-.271,5.728,5.728,0,0,0,.5-.59,4.636,4.636,0,0,1,.523-.59.789.789,0,0,1,.476-.271.62.62,0,0,1,.271.067,2.656,2.656,0,0,1,.338.2q.2.138.238.166.238.143.509.295t.6.333q.333.181.514.285.666.333.723.5A.533.533,0,0,1,13.392,10.577Z" transform="translate(0)" fill="#295caa"/>
+                                  </svg>
+                                  
+                            </div>
+                            032 2 932 099
+                        </a>
+                    </div>
+                    <div class="contact-box">
+                        <a href="mailto:heraldika@parliament.ge" class="contact">
+                            <div class="contact-logo">
+                                <svg id="Group_1346" data-name="Group 1346" xmlns="http://www.w3.org/2000/svg" width="14" height="10.84" viewBox="0 0 14 10.84">
+                                    <path id="Path_113" data-name="Path 113" d="M35.615,38.763H22.545a.465.465,0,0,0-.465.465v.935a.158.158,0,0,0,.085.113l6.87,3.924a.117.117,0,0,0,.117,0l6.663-3.919c.037-.021.137-.076.174-.1s.092-.059.092-.114v-.837A.465.465,0,0,0,35.615,38.763Z" transform="translate(-22.08 -38.763)" fill="#295caa"/>
+                                    <path id="Path_114" data-name="Path 114" d="M131.592,68.293a.117.117,0,0,0-.117,0l-3.77,2.218a.116.116,0,0,0-.026.179l3.771,4.065a.115.115,0,0,0,.085.037.116.116,0,0,0,.116-.116V68.394A.116.116,0,0,0,131.592,68.293Z" transform="translate(-117.65 -65.483)" fill="#295caa"/>
+                                    <path id="Path_115" data-name="Path 115" d="M32.725,99.382a.116.116,0,0,0-.144-.021l-1.511.889a.59.59,0,0,1-.583,0l-1.33-.76a.116.116,0,0,0-.137.016l-5.051,4.685a.116.116,0,0,0,.021.185.45.45,0,0,0,.231.068H37.159a.116.116,0,0,0,.085-.2Z" transform="translate(-23.757 -93.608)" fill="#295caa"/>
+                                    <path id="Path_116" data-name="Path 116" d="M26.232,71.7a.116.116,0,0,0-.021-.186l-3.957-2.26a.116.116,0,0,0-.173.1v5.931a.116.116,0,0,0,.2.085Z" transform="translate(-22.08 -66.354)" fill="#295caa"/>
+                                  </svg>
+                            </div>
+                            heraldika@parliament.ge
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="bottom-box">
+            <div class="rights">
+                <span class="small-text">
+                    © კავკასიის ჰერალდიკა
+                    ყველა უფლება დაცულია 2024
+                </span>
+            </div>
+            <a href="index.html">
+                <div class="footer-logo">
+                    <div class="footer-logo-box">
+                        <img src="../photo/logo_geo.png" alt="" srcset="" style="width: 40.22px; height: 41px;">                         
+                    </div>
+                    <span class="footer-name">
+                        საქართველოს პარლამენტთან არსებული
+                        ჰერალდიკის სახელმწიფო საბჭო
+                    </span>
+                </div>
+            </a>
+            <a href="https://proservice.ge/">
+                <div class="author-box">
+                    <span class="small-text">Created by <span style="color: #9BC3FF;">Proservice</span></span>
+                </div>
+            </a>
+        </div>
+    </div>
+  </footer>
+</body>
+</html>
