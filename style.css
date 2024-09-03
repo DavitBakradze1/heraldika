@@ -15,8 +15,14 @@
 
 .slide {
     width: 100%;
-    display: none;
+    height: 334px;
     transition: opacity 0.5s ease-in-out;
+    object-fit: cover;
+}
+
+.main-slide{
+    width: 100% !important; 
+    margin: 0% !important;
 }
 
 img {
@@ -26,10 +32,10 @@ img {
 }
 
 .dots{
-    position: absolute;
-    top: 310px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: absolute !important;
+    top: 275px !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
 }
 
 .dot {
@@ -54,18 +60,18 @@ img {
 .section-nav{
     display: flex;
     position: absolute;
-    top: 380px;
+    top: 410px;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 20px;
     align-items: flex-end;
     height: 100px;
+    z-index: 10;
 }
 
 .section-nav-box{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 53px 43px 30px 20px;
     width: 200px;
     height: 100px;
     background-color: #FAFAFA;
@@ -82,11 +88,12 @@ img {
 
 .first-child:hover{
     border-top-right-radius: 10px;
-    transition: 0.2s ease-in;
+    transition: 0.2s ease-in-out;
+    padding: 58px 43px 30px 20px;
 }
 
 .section-nav-box:hover{
-    height: 120px;
+    height: 115px;
     background-color: #F2F2F2;
 }
 
@@ -97,13 +104,15 @@ img {
 
 .last-child:hover{
     border-top-left-radius: 10px;
-    transition: 0.2s ease-in;
+    transition: 0.2s ease-in-out;
+    padding: 58px 43px 30px 20px;
 }
 
 .middle-child:hover{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    transition: 0.2s ease-in;
+    transition: 0.2s ease-in-out;
+    padding: 58px 43px 30px 20px;
 }
 
 /*section nav*/
@@ -138,6 +147,9 @@ img {
 
 .news-text{
     width: 464px;
+    height: 51px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .news-box{
@@ -145,6 +157,16 @@ img {
     grid-template-columns: 2fr auto;
     grid-template-rows: 184px 184px;
     gap: 30px;
+}
+
+.news-link:hover .news-text{
+    color: #003399;
+    transition: all 0.2s ease-in;
+}
+
+.news-link:hover .link-icon path{
+    fill: #003399;
+    transition: all 0.2s ease-in;
 }
 
 .news-box-shape{
@@ -163,17 +185,17 @@ img {
 
 .news-box-shape:hover{
     background-color: #003399;
-    transition: 0.2s ease-in;
+    transition: 0.2s ease-in-out;
 }
 
 .news-box-shape:hover .news-svg path{
     fill: white;
-    transition: 0.2s ease-in;
+    transition: 0.2s ease-in-out;
 }
 
 .news-box-shape:hover .type-name{
     color: white;
-    transition: 0.2s ease-in;
+    transition: 0.2s ease-in-out;
 }
 
 /*swiper*/
@@ -194,6 +216,19 @@ img {
         rgba(50, 63, 91, 0.6) 65%, 
         rgba(37, 88, 168, 0.8) 80%, 
         rgba(0, 51, 151, 1) 100% 
+    );
+}
+
+.preview-slide-cover:hover {
+    transition: all 0.3s ease-in;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 0) 25%, 
+        rgba(0, 51, 153, 0.4) 40%,
+        rgba(0, 51, 153, 0.6) 55%, 
+        rgba(0, 51, 153, 1) 80%, 
+        rgba(0, 51, 153, 1) 100% 
     );
 }
 
@@ -269,6 +304,15 @@ img {
 
 
 
+.map-box{
+    display: none;
+}
+
+.map-box.active{
+    display: block ;
+}
+
+
 
 .map-section{
     margin-top: 60px;
@@ -292,6 +336,17 @@ img {
     border-radius: 5px;
     transition: background-color 0.2s ease-in-out;
     transition-delay: 0.2s;
+    cursor: pointer;
+}
+
+.map-name{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: FIraGo-regular;
+    font-size: 16px;
 }
 
 .map-type-box:hover{

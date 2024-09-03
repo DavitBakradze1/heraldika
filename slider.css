@@ -51,6 +51,8 @@
 .pagination-dot {
   color: black;
   cursor: pointer;
+  font-family: mrglovani-regular;
+  color: #929395;
 }
 
 .pagination-dot.active {

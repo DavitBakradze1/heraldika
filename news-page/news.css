@@ -79,8 +79,10 @@
 
 .content-text{
     width: 253px;
-    height: auto;
+    height: 71px;
     text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .slider-card:hover .news-logo path{
