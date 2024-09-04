@@ -16,6 +16,7 @@ body{
   padding-top: 66px;
   align-items: center;
   gap: 50px;
+  width: 100%;
 }
 
 .file-container{
@@ -86,6 +87,8 @@ body{
 .popup-text{
   color: red;
   text-decoration: underline;
+  font-size: 12px;
+  font-family: bpg-mrgvlovani;
 }
 
 .flag-container{
@@ -113,8 +116,8 @@ body{
 }
 
 .adress-text{
-  font-family: mrglovani;
-  font-size: 10px;
+  font-family: bpg-mrgvlovani;
+  font-size: 12px;
   text-align: center;
 }
 
@@ -170,7 +173,7 @@ body{
 }
 
 .popup-name{
-  font-family: mrglovani;
+  font-family: bpg-mrgvlovani;
   color: red;
   width: 100%;
   text-align: center;
@@ -244,6 +247,12 @@ body{
   border: none;
 }
 
+.adress-mail{
+  color: #003399;
+  font-family: bpg-mrgvlovani;
+  font-size: 12px;
+}
+
 
 @media (max-width:1090px) {
   .simbolika-container{
@@ -258,16 +267,18 @@ body{
 
   .file-container{
     gap: 20px;
+    width: 100%;
   }
 
 
   .file-line{
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .file-box{
-    width: 420px;
+    width: 100%;
     height: auto;
   }
 
@@ -320,9 +331,7 @@ body{
 }
 
 @media (max-width:425px) {
-  .file-box{
-    width: 310px;
-  }
+
 
   .anthem-img{
     width: 310px;

@@ -30,7 +30,7 @@
 }
 
 .project-name {
-  font-family: FiraGo-regular;
+  font-family: "FiraGo";
   font-size: 14px;
   color: #000000;
   transition: all 0.3s;
@@ -101,6 +101,7 @@
   max-height: 35px;
   text-overflow: ellipsis;
   overflow: hidden;
+  font-size: 12px;
 }
 
 .download{
@@ -117,7 +118,7 @@
   justify-content: center;
   gap: 36px;
   font-size: 12px;
-  font-family: mrglovani;
+  font-family: "BPG Mrgvlovani Caps 2010";
 
 }
 
@@ -268,6 +269,10 @@
   
   .memorandumi-img{
     width: 100%;
+  }
+
+  .download{
+    gap: 16px;
   }
   
 }

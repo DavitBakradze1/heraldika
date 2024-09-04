@@ -2,8 +2,8 @@ function selectLanguage(code) {
     console.log('Selected language:', code);
     const picker = document.querySelector('.language-picker');
     const flagSrc = {
-        'en': 'flag-for-flag-united-kingdom-svgrepo-com.svg',
-        'ge': 'flag-for-flag-georgia-svgrepo-com.svg'
+        'en': '../photo/flag-for-flag-united-kingdom-svgrepo-com.svg',
+        'ge': '../photo/flag-for-flag-georgia-svgrepo-com.svg'
     };
     picker.querySelector('img').src = flagSrc[code];
     picker.querySelector('img').alt = code.charAt(0).toUpperCase() + code.slice(1);
@@ -73,6 +73,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-function goToPage(){
-    window.location.href = "search result/search.html";
+function goToPage() {
+    window.location.href = "html/search.html";
 }
+
+document.querySelectorAll('.search-button').forEach(button => {
+    button.addEventListener('click', goToPage);
+});
+
+function goToSearchPage() {
+    window.location.href = "search.html";
+}
+
+document.querySelectorAll('.search-button').forEach(button => {
+    button.addEventListener('click', goToSearchPage);
+});

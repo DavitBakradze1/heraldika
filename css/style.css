@@ -71,7 +71,7 @@ img {
 
 .section-nav-box{
     display: flex;
-    padding: 53px 43px 30px 20px;
+    padding: 53px 20px 30px 20px;
     width: 200px;
     height: 100px;
     background-color: #FAFAFA;
@@ -89,7 +89,7 @@ img {
 .first-child:hover{
     border-top-right-radius: 10px;
     transition: 0.2s ease-in-out;
-    padding: 58px 43px 30px 20px;
+    padding: 58px 20px 30px 20px;
 }
 
 .section-nav-box:hover{
@@ -105,14 +105,14 @@ img {
 .last-child:hover{
     border-top-left-radius: 10px;
     transition: 0.2s ease-in-out;
-    padding: 58px 43px 30px 20px;
+    padding: 58px 20px 30px 20px;
 }
 
 .middle-child:hover{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     transition: 0.2s ease-in-out;
-    padding: 58px 43px 30px 20px;
+    padding: 58px 20px 30px 20px;
 }
 
 /*section nav*/
@@ -147,7 +147,7 @@ img {
 
 .news-text{
     width: 464px;
-    height: 51px;
+    max-height: 53px;
     text-overflow: ellipsis;
     overflow: hidden;
 }
@@ -169,7 +169,7 @@ img {
     transition: all 0.2s ease-in;
 }
 
-.news-box-shape{
+.news-box-shape {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -179,23 +179,35 @@ img {
     border-radius: 20px;
     background-color: #FAFAFA;
     gap: 20px;
-    transition: background-color 0.3s ease-in-out;
-    transition-delay: 0.2s;
+    transition: all 0.3s ease;
 }
 
-.news-box-shape:hover{
+.news-box-shape:hover {
     background-color: #003399;
-    transition: 0.2s ease-in-out;
 }
 
-.news-box-shape:hover .news-svg path{
+.news-svg {
+    fill: #039;
+    transition: all 0.3s ease;
+}
+
+.news-box-shape:hover .news-svg {
     fill: white;
-    transition: 0.2s ease-in-out;
 }
 
-.news-box-shape:hover .type-name{
+.type-name {
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.news-box-shape:hover .type-name {
     color: white;
-    transition: 0.2s ease-in-out;
+}
+
+.news-name{
+    max-height: 63px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 /*swiper*/
@@ -462,6 +474,7 @@ img {
     display: flex;
     align-items: center;
     padding: 5px 15px;
+    justify-content: center;
  }
 
  .section-nav-box:hover{

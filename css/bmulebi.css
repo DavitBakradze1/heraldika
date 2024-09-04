@@ -1,22 +1,4 @@
-@font-face {
-    font-family: FiraGo-regular;
-    src: url('../fonts/firago-latin-400-normal.ttf');
-}
 
-@font-face {
-    font-family: FiraGo-Bold;
-    src: url('../fonts/firago-latin-700-normal.ttf');
-}
-
-@font-face {
-    font-family: mrglovani;
-    src: url('../fonts/bpg-mrgvlovani-caps-webfont.ttf');
-}
-
-
-
-
-/*main*/
 
 .links{
     width: 100%;

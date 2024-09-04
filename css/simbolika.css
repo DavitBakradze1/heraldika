@@ -25,6 +25,10 @@
 
 .card-img{
   position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .img-cover{
@@ -47,6 +51,12 @@
   height: auto;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.card-name{
+  max-height: 63px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .card:hover .img-cover{
@@ -96,14 +106,14 @@
 
 @media (max-width:425px){
   .grid-card{
-    width: 310px;
+    width: 300px;
   }
 
   .img-cover{
-    width: 310px;
+    width: 300px;
   }
 
   .card-img{
-    width: 310px;
+    width: 300px;
   }
 }

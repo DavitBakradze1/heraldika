@@ -160,7 +160,7 @@
 }
 
 .back{
-    color: #A4A4A4;
+    color: #A4A4A4 !important;
     transition: color 0.2s ease-in;
 }
 

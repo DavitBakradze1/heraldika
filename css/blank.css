@@ -48,13 +48,15 @@
   display: flex;
   padding-top: 16px;
   padding-left: 20px;
+  padding-right: 28px;
   background-color: #ffffff;
   border: 1px solid #ccc;
   border-radius: 10px;
+  justify-content: space-between;
 }
 
 .selector {
-  width: 311px;
+  max-width: 311px;
   height: 38px;
   cursor: pointer;
   outline: none;
